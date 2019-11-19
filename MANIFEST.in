@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include pemasaran_timah *.css
+recursive-include pemasaran_timah *.csv
+recursive-include pemasaran_timah *.html
+recursive-include pemasaran_timah *.ico
+recursive-include pemasaran_timah *.js
+recursive-include pemasaran_timah *.json
+recursive-include pemasaran_timah *.md
+recursive-include pemasaran_timah *.png
+recursive-include pemasaran_timah *.py
+recursive-include pemasaran_timah *.svg
+recursive-include pemasaran_timah *.txt
+recursive-exclude pemasaran_timah *.pyc
