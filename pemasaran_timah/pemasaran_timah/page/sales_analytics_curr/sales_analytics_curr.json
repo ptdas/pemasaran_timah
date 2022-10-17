@@ -1,0 +1,30 @@
+{
+ "content": null, 
+ "creation": "2022-06-17 09:59:06.357527", 
+ "docstatus": 0, 
+ "doctype": "Page", 
+ "icon": "fa fa-bar-chart", 
+ "idx": 0, 
+ "modified": "2022-06-17 09:59:28.850304", 
+ "modified_by": "Administrator", 
+ "module": "Pemasaran Timah", 
+ "name": "sales-analytics-curr", 
+ "owner": "Administrator", 
+ "page_name": "sales-analytics-currency", 
+ "roles": [
+  {
+   "role": "Analytics"
+  }, 
+  {
+   "role": "Sales Manager"
+  }, 
+  {
+   "role": "Maintenance Manager"
+  }
+ ], 
+ "script": null, 
+ "standard": "Yes", 
+ "style": null, 
+ "system_page": 0, 
+ "title": "Sales Analytics with Currency"
+}

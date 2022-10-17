@@ -1,0 +1,14 @@
+
+.hero-and-content {
+	background-color: white!important;
+	display:none!important;visibility:hidden!important;
+}
+.web-footer{
+	background-color: white!important;
+	border:0!important;
+	display:none!important;visibility:hidden!important;
+}
+.navbar-main{display:none!important;visibility:hidden!important;}
+.web-footer .footer-links{display:none!important; visibility:hidden!important;}
+.dropdown-help{display:none!important;}
+.case-label{color:black!important; text-shadow:none!important;}

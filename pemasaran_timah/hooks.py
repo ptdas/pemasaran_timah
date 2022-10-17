@@ -10,10 +10,15 @@ app_icon = "octicon octicon-file-directory"
 app_color = "green"
 app_email = "ptdigitalasiasolusindo.com"
 app_license = "MIT"
-
+website_context = {
+        "favicon":      "assets/pemasaran_timah/images/fav.png",
+        "splash_image": "assets/pemasaran_timah/images/big.png"
+}
 # Includes in <head>
 # ------------------
-
+app_include_css = "/assets/pemasaran_timah/css/pemasaran_timah.min.css"
+#app_include_js = "assets/js/produksi_bijih.min.js"
+web_include_css = "/assets/pemasaran_timah/css/pemasaran_timah.min.css"
 # include js, css files in header of desk.html
 # app_include_css = "/assets/pemasaran_timah/css/pemasaran_timah.css"
 # app_include_js = "/assets/pemasaran_timah/js/pemasaran_timah.js"
@@ -79,12 +84,19 @@ app_license = "MIT"
 # ---------------
 # Hook on document methods and events
 
+standard_queries = {
+	"Terms Of Payment": "pemasaran_timah.custom_method.get_terms_of_payment"
+}
+
+
 doc_events = {
 	"Sales Order": {
 		# "validate": "pemasaran_timah.custom_method.check_booking_order",
-		"on_submit": ["pemasaran_timah.custom_method.sync_so_po","pemasaran_timah.custom_method.check_booking_order"],
+		"on_submit": ["pemasaran_timah.custom_method.check_booking_order"],
+		"before_cancel": "pemasaran_timah.custom_method.cancel_so"
 	},
 	"Delivery Note": {
+		"validate": "pemasaran_timah.custom_method.check_stock",
 		"on_update": "pemasaran_timah.custom_method.update_est_date",
 		"on_submit": "pemasaran_timah.custom_method.release_booking_order",
 	},
@@ -93,8 +105,23 @@ doc_events = {
 	},
 	"Stock Entry": {
 		"validate": "pemasaran_timah.custom_method.check_booking_order_stock",
+	},
+	"Sales Invoice": {
+		"on_submit": "pemasaran_timah.custom_method.sync_sinv_pr",
+		"on_cancel": "pemasaran_timah.custom_method.sync_cancel_sinv_pr"
+	},
+	"Shipping Instruction Forwarder":{
+		"autoname": "pemasaran_timah.custom_method.autoname_ship_inst"
+	},
+	"Letter of Indemnity":{
+		"autoname": "pemasaran_timah.custom_method.autoname_loi"
+	},
+	"Dokumen Authorization Release":{
+		"autoname": "pemasaran_timah.custom_method.autoname_dar"
 	}
 }
+
+dump_report_map = "pemasaran_timah.report_data_map.data_map"
 
 # Scheduled Tasks
 # ---------------
